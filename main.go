@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"os/exec"
 	"strings"
 
@@ -15,7 +16,13 @@ var upgrader = websocket.Upgrader{}
 func main() {
 	fmt.Println("Starting Magic Remote...")
 
-	fs := http.FileServer(http.Dir("./ui"))
+	frontEndPath := os.Getenv("MAGIC_REMOTE_UI")
+	if frontEndPath == "" {
+		frontEndPath = "./ui"
+	}
+	log.Printf("Using path for UI: %s", frontEndPath)
+
+	fs := http.FileServer(http.Dir(frontEndPath))
 
 	router := http.NewServeMux()
 	router.Handle("/socket", http.HandlerFunc(socket));
@@ -42,6 +49,7 @@ func socket(w http.ResponseWriter, r *http.Request) {
 	}
 	defer conn.Close()
 
+	log.Printf("opened connection to %s", r.RemoteAddr)
 	for {
 		mt, msg, err := conn.ReadMessage()
 		if err != nil {
@@ -64,5 +72,4 @@ func xdotool(args []byte) {
 	if err != nil {
 		log.Printf("error running command: %s", err)
 	}
-	log.Printf("ran: xdotool %s", args);
 }
