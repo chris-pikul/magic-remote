@@ -1,3 +1,37 @@
+const codeConvert = {
+    '!': 'exclam',
+    '@': 'at',
+    '#': 'numbersign',
+    '$': 'dollar',
+    '%': 'percent',
+    '^': 'asciicircum',
+    '&': 'ampersand',
+    '*': 'asterisk',
+    '(': 'parenleft',
+    ')': 'parenright',
+    '-': 'minus',
+    '_': 'underscore',
+    '+': 'plus',
+    '=': 'equal',
+    '[': 'bracketleft',
+    ']': 'bracketright',
+    '\\': 'backslash',
+    '{': 'braceleft',
+    '}': 'braceright',
+    '|': 'bar',
+    ':': 'colon',
+    ';': 'semicolon',
+    "'": 'apostraphe',
+    '"': 'quotedbl',
+    ',': 'comma',
+    '.': 'period',
+    '/': 'slash',
+    '<': 'less',
+    '>': 'greater',
+    '?': 'question',
+    '~': 'asciitilde',
+};
+
 (function () {
     console.log('Binding keyboard feature');
     const container = document.getElementById('keyboard');
@@ -58,6 +92,8 @@
         if (btn.dataset.key && btn.dataset.key.length > 0)
             code = btn.dataset.key;
         else code = btn.innerText;
+
+        if (code in codeConvert) code = codeConvert[code];
 
         if (code && code.length > 0) {
             console.log('Sending key event', code);

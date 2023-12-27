@@ -17,7 +17,7 @@
 
         const code = btn.dataset.key || btn.innerText;
         console.log('Sending event', code);
-        window.magicRemote.send('command', code);
+        window.magicRemote.send('key', code);
     };
 
     buttons.forEach((btn) => btn.addEventListener('click', handler));
