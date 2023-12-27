@@ -1,0 +1,44 @@
+{
+    "id": "/",
+    "theme_color": "#0bc20b",
+    "background_color": "#1c231e",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "name": "PikTV Remote",
+    "short_name": "Remote",
+    "description": "Magic remote for PikTV, allowing you to control the TV through your phone.",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/piktv.svg",
+            "type": "image/svg+xml",
+            "sizes": "any"
+        },
+        {
+            "src": "/icon-72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

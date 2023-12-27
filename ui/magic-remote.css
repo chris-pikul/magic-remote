@@ -1,0 +1,164 @@
+html, body {
+    width: 100vw;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.25em;
+
+    background: black;
+    background: var(--shade-900);
+    background-image: radial-gradient(farthest-corner at 30% 70%, var(--shade-800) 0%, var(--shade-950) 100%);
+    background-repeat: no-repeat;
+    color: var(--shade-100);
+
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.25rem 1rem;
+
+    & h1 {
+        color: var(--primary);
+        font-weight: bold;
+        text-shadow: 0.1em 0.1em 0.2em rgb(0 0 0 / 0.8);
+    }
+
+    & h2 {
+        color: var(--secondary);
+    }
+}
+
+section {
+    padding: 0.5rem;
+}
+
+button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    appearance: none;
+    background: var(--shade-700);
+    border: none;
+    outline: none;
+    color: var(--shade-300);
+    transition: background 0.1s ease, color 0.05s ease;
+    padding: 0.5rem 0;
+
+    &:focus {
+        background: var(--shade-600);
+    }
+    &:hover {
+        background: var(--shade-400);
+        color: var(--shade-200);
+    }
+    &:active {
+        background: var(--shade-300);
+        color: var(--shade-800);
+    }
+}
+
+svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    color: inherit;
+    pointer-events: none;
+
+    & * {
+        fill: currentColor;
+    }
+}
+
+#touchpad {
+    display: block;
+    height: 25vh;
+    background: radial-gradient(circle at center, var(--shade-700), var(--shade-800));
+    border: 1px solid var(--shade-600);
+    border-radius: 0.5rem;
+}
+
+#buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+#buttons-left {
+    flex: 1;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 2rem;
+    gap: 0.5rem;
+}
+
+#buttons-right {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    & button {
+        min-width: 5cqmin;
+        min-height: 5cqmin;
+        aspect-ratio: 1;
+        font-size: 4cqi;
+        font-size: 4cqmin;
+        border-radius: 0.25em;
+    }
+}
+
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 0.1em;
+
+    & button {
+        font-size: 4cqi;
+        font-size: 4cqmin;
+        text-align: center;
+    }
+}
+
+.span-2 {
+    aspect-ratio: unset;
+    grid-column: span 2;
+}
+
+.span-3 {
+    aspect-ratio: unset;
+    grid-column: span 3;
+}
+
+.span-4 {
+    aspect-ratio: unset;
+    grid-column: span 4;
+}
+
+.span-5 {
+    aspect-ratio: unset;
+    grid-column: span 5;
+}

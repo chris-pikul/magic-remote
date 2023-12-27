@@ -1,0 +1,16 @@
+:root {
+    --shade-50: hsl(40deg, 10%, 85%);
+    --shade-100: hsl(50deg, 10%, 80%);
+    --shade-200: hsl(60deg, 12%, 70%);
+    --shade-300: hsl(70deg, 13%, 60%);
+    --shade-400: hsl(80deg, 14%, 50%);
+    --shade-500: hsl(90deg, 15%, 40%);
+    --shade-600: hsl(100deg, 16%, 30%);
+    --shade-700: hsl(110deg, 17%, 20%);
+    --shade-800: hsl(120deg, 18%, 10%);
+    --shade-900: hsl(137deg, 20%, 8%);
+    --shade-950: hsl(138deg, 22%, 5%);
+
+    --primary: hsl(87deg, 69%, 49%);
+    --secondary: hsl(120deg, 89%, 40%);
+}
