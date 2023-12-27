@@ -12,11 +12,18 @@ function connect() {
     window.magicRemote.socket.onerror = console.error;
     window.magicRemote.socket.onclose = () => {
         console.log('Socket closed, retrying in 1sec');
+
+        const scrn = document.getElementById('disabler');
+        if (scrn) scrn.style.display = '';
+
         window.magicRemote.socket = null;
-        setTimeout(connect, 1000);
+        setTimeout(connect, 3000);
     };
     window.magicRemote.socket.onopen = () => {
         console.log('Socket is open now');
+
+        const scrn = document.getElementById('disabler');
+        if (scrn) scrn.style.display = 'none';
 
         window.magicRemote.send = (...args) => {
             if (window.magicRemote.socket)
